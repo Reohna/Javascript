@@ -20,3 +20,12 @@ let hello = (name2, time = "day") => {
 hello("Julianna")
 
 greet("Neda", "night", "sandwich");
+
+function circleAreaCalculation(radius)
+{
+   radius = prompt("How long is the radius? ")
+   result = Math.PI * (radius*radius)
+   alert("The area of your radius " + radius + " is " + result)
+}
+
+circleAreaCalculation()
