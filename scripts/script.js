@@ -68,9 +68,42 @@ function populateList(shoppingListArray){
         const newContent = document.createTextNode(item)
         newLi.appendChild(newContent)
         //append li to the ul
-        ulList.appendChild(newLi)
+        ulList.appendChild(newLi);
     }
 }
 
-let myShoppingList = ["cheese","bread","green pepper"]
-populateList(myShoppingList)
+let myShoppingList = ["cheese","bread","green pepper"];
+populateList(myShoppingList);
+
+
+function squareListMaker(){
+    ulList.classList.add("squareList");
+    ulList.classList.remove("circleList");
+}
+squareListMaker()
+
+function updateImage(){
+    const image = document.querySelector("#shoppingCart");
+    image.setAttribute("src", "https://cdn-icons-png.flaticon.com/512/263/263142.png")
+image.setAttribute("width", "50")
+image.setAttribute("height", "50")
+image.setAttribute("alt", "shopping cart")
+}
+
+updateImage()
+
+function makeListGreen(){
+    // 1. find li -> return array-like structure
+    const listItems = document.querySelectorAll(".shopping > li");
+    // 2. loop the array-like structure
+    for (let item of listItems){
+        let text = item.textContent;
+        if (text.includes("green")){
+            item.classList.add("greenText");
+        }
+    }
+}
+makeListGreen()
+    // 3. find the textContent of each item of the array
+    // 4. use .includes() to check if the text contains green
+
